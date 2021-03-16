@@ -64,7 +64,7 @@ if (y2019 >= y2018 && y2019 >= y2017) {
     }
 }
 
-for (let i = 0; i <=2; i++){
+for (let i = 0; i <= 2; i++) {
     console.log('--------------------' + i);
 }
 
@@ -94,7 +94,7 @@ let diffPrice;
 
 let qChildren = 90;
 let qTeenagers = 10;
-let qAdults= 5;
+let qAdults = 5;
 let qSeniors = 7;
 let qExPrivates = 2;
 let qPeople = qChildren + qTeenagers + qAdults + qSeniors + qExPrivates;
@@ -102,13 +102,13 @@ console.log(qPeople);
 
 if (qPeople >= maxCap) {
     console.log(`Someone won't enter to the cinema. You must leave out ${qPeople - maxCap} people.`);
-    console.log(`Please select who in this categories will be out`);
+    console.log(`Please select who in the next categories will be out`);
     if (qTeenagers >= 1) {
         console.log(`There are ${qTeenagers} teenagers.`);
         let cantEnterTeen = `YEs`; //this is the answer to the question 'do you want any of them out of the cinema room?' answer will be 'yes' or 'no'
         console.log(cantEnterTeen);
         if (cantEnterTeen.toLowerCase() == 'yes') {
-            let ansCantEnterTeen = 5 ; //how many teenager can't enter to the cinema room, only accept numbers.
+            let ansCantEnterTeen = 5; //how many teenager can't enter to the cinema room, only accept numbers.
             let qCantEnterTeen = parseInt(ansCantEnterTeen);
             console.log(`You are leaving out ${qCantEnterTeen} teenagers.`);
             qTeenagers = qTeenagers - qCantEnterTeen;
@@ -119,7 +119,7 @@ if (qPeople >= maxCap) {
         let cantEnterAdult = `YEs`; //this is the answer to the question 'do you want any of them out of the cinema room?' answer will be 'yes' or 'no'
         console.log(cantEnterAdult);
         if (cantEnterAdult.toLowerCase() == 'yes') {
-            let ansCantEnterAdult = 5 ; //how many teenager can't enter to the cinema room, only accept numbers.
+            let ansCantEnterAdult = 5; //how many teenager can't enter to the cinema room, only accept numbers.
             let qCantEnterAdult = parseInt(ansCantEnterAdult);
             console.log(`You are leaving out ${qCantEnterAdult} adults.`);
             qAdults = qTeenagers - qCantEnterAdult;
@@ -135,7 +135,7 @@ if (qPeople >= maxCap) {
         console.log(`There is ${qAdults} aldut.`);
     } else {
         console.log(`There isn't any adult.`);
-    } 
+    }
 } else {
     maxCapKey = true;
 }
@@ -146,17 +146,77 @@ let paymentAdults = adultPay * qAdults;
 let paymentSenior = seniorPay * qSeniors;
 let paymentExprivates = exPrivate * qExPrivates;
 let totalPayment = paymentChildren + paymentTeenager + paymentAdults + paymentSenior + paymentExprivates;
-console.log(`Total payment is $` + totalPayment);
-if (qPeople >= 50 && maxCapKey == true) {
-    totalPayment *= discount;
-    diffPrice = `10% discount, 'cause the cinema romm is full.`;
-} else if (qPeople < 30  && maxCapKey == true) {
-    totalPayment *= overPrice;
-    diffPrice = `30% overprice, cause the cinemaroom is almost empty.`;
+if (maxCapKey == true) {
+    if (qPeople >= 50) {
+        totalPayment *= discount;
+        diffPrice = `10% discount, 'cause the cinema room is full.`;
+        console.log(`Total payment is $` + totalPayment + ` with ` + diffPrice);
+    } else if (qPeople < 30) {
+        totalPayment *= overPrice;
+        diffPrice = `30% overprice, cause the cinemaroom is almost empty.`;
+        console.log(`Total payment is $` + totalPayment + ` with ` + diffPrice);
 
+    } else {
+        diffPrice = `any discount`;
+        console.log(`Total payment is $` + totalPayment + ` with ` + diffPrice);
+    }
 } else {
-    diffPrice = `any discount`;
+    console.log(`Max capacity reached`);
 }
 
-console.log(`Total payment is $` + totalPayment + ` with ` + diffPrice);
 
+
+
+// ARRAYS
+
+
+for (let i=0; i<=4; i += 1){
+    console.log(`----------------ARRAYS` + i + `-------------------------------`);
+}
+
+// let users = [`jose`, `maria`, `alberto`, `fernando`]
+
+// console.log(users);
+
+
+// let array = [];
+
+// array.push(['Juan','pedro','marcelo']);
+// array.push('gonzales','silva','rodriguez');
+// array[0].push('mario');
+// n = array[0].length;
+
+
+// console.log(array[0].length);
+// console.log(array);
+// console.log(array[2]);
+
+// hacer mediante arrays un sistema en donde ingresar nombres y notas según alumno y guardarlo en arrays
+//hacerlo para 4 alumnos, mostrar nombre, apellido, nota y aprobado
+
+// let name = [];
+// let surename = [];
+// let notes = [];
+
+// students.push(prompt('Inserte nombre'));
+// students.push(prompt(`Inserte apellido`));
+
+// students[0].push('garcia');
+
+// console.log(students)
+
+
+
+//  Objects 
+
+
+const object = {
+    name: 'Arnaldo',
+    surename: 'Paredes',
+    age: 27,
+    senior: true
+}
+
+console.log(object.name);
+console.log(object.age);
+console.log(object.name);
